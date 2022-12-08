@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Load text domain.
 function meom_cookiebot_embed_i18n() {
-    load_muplugin_textdomain( 'meom-cookiebot-embed', trailingslashit( dirname( plugin_basename( __FILE__ ) ) ) . 'languages' );
+    load_plugin_textdomain( 'meom-cookiebot-embed', false, trailingslashit( dirname( plugin_basename( __FILE__ ) ) ) . 'languages' );
 }
 add_action( 'plugins_loaded', 'meom_cookiebot_embed_i18n', 2 );
 
