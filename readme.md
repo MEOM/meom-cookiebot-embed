@@ -10,7 +10,7 @@ After accepting marketing cookies, video will show up.
 
 ## Styles
 
-This plugin doesn't output any styles. Here is one example what you add to your theme styles:
+This plugin doesn't output any styles. Example styles for your theme styles:
 
 ```css
 .wp-block-embed__cookiebot-message {
