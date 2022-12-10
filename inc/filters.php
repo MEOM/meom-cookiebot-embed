@@ -16,7 +16,16 @@ namespace MEOM\CookiebotEmbed;
  * @return string The block contents, rendered (or altered).
  */
 function render_block( $block_content, $block ) {
-    if ( 'core/embed' === $block['blockName'] && 'youtube' === $block['attrs']['providerNameSlug'] ) {
+    /**
+	 * Filters the condition when to add Cookiebot message to the embed block.
+	 *
+	 * @param string $condition     Condition.
+	 * @param string $block_content The block content about to be appended.
+     * @param array  $block         The full block, including name and attributes.
+	 */
+    $condition = apply_filters( 'meom_cookiebot_embed_condition', 'core/embed' === $block['blockName'] && 'youtube' === $block['attrs']['providerNameSlug'], $block_content, $block );
+
+    if ( $condition ) {
         $cookie_text  = '<div class="wp-block-embed__cookiebot-message cookieconsent-optout-marketing"><p>';
         $cookie_text .= sprintf( __( 'Please <a href="%s">accept marketing-cookies</a> to watch this video.', 'meom-cookiebot-embed' ), 'javascript:Cookiebot.renew()' );
         $cookie_text .= '</p></div>';
