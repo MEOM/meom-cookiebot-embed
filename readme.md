@@ -8,6 +8,22 @@ This plugin adds placeholder text and link to Cookiebot settings where user can 
 
 After accepting marketing cookies, video will show up.
 
+## Installation
+
+Note that composer package install this plugin as must-use plugin in `mu-plugins` folder.
+
+Use Composer to install the package.
+
+```bash
+composer require meom/meom-cookiebot-embed
+```
+
+Or if living on the edge:
+
+```bash
+composer require meom/meom-cookiebot-embed:dev-main
+```
+
 ## Styles
 
 This plugin doesn't output any styles. Example styles for your theme styles:
