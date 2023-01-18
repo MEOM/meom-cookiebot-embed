@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MEOM Cookiebot embed\n"
-"POT-Creation-Date: 2022-12-09 10:41+0200\n"
+"POT-Creation-Date: 2023-01-18 12:39+0200\n"
 "PO-Revision-Date: 2022-12-08 16:43+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -22,9 +22,11 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 
-#: inc/filters.php:21
+#: inc/filters.php:30
 #, php-format
-msgid "Please <a href=\"%s\">accept marketing-cookies</a> to watch this video."
+msgid ""
+"Oops! This video will not be shown because you have disabled the marketing "
+"cookies. To see the video, <a href=\"%s\">accept marketing cookies</a>."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
