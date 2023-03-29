@@ -30,6 +30,7 @@ function render_block( $block_content, $block ) {
         $cookie_text .= sprintf( __( 'Oops! This video will not be shown because you have disabled the marketing cookies. To see the video, <a href="%s">accept marketing cookies</a>.', 'meom-cookiebot-embed' ), 'javascript:Cookiebot.renew()' );
         $cookie_text .= '</p></div>';
 
+        $block_content = str_replace( 'src=', 'data-cookieconsent="marketing" data-cookieblock-src=', $block_content );
         $block_content = str_replace( '</figure>', $cookie_text . '</figure>', $block_content );
     }
 
