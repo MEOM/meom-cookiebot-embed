@@ -31,7 +31,14 @@ function render_block( $block_content, $block ) {
         $cookie_text .= '</p></div>';
 
         $block_content = str_replace( 'src=', 'data-cookieconsent="marketing" data-cookieblock-src=', $block_content );
-        $block_content = str_replace( '</figure>', $cookie_text . '</figure>', $block_content );
+
+        // If there is <figcaption>, add the cookie text before it.
+        $figcaption_check = strpos( $block_content, '<figcaption' );
+        if ( false !== $figcaption_check ) {
+            $block_content = str_replace( '<figcaption', $cookie_text . '<figcaption', $block_content );
+        } else {
+            $block_content = str_replace( '</figure>', $cookie_text . '</figure>', $block_content );
+        }
     }
 
     return $block_content;
