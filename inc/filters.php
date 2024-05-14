@@ -26,8 +26,15 @@ function render_block( $block_content, $block ) {
     $condition = apply_filters( 'meom_cookiebot_embed_condition', 'core/embed' === $block['blockName'] && 'youtube' === $block['attrs']['providerNameSlug'], $block_content, $block );
 
     if ( $condition ) {
+        /**
+         * Filters the placeholder text added to the embed block.
+         *
+         * @param string $text Text.
+         */
+        $text = apply_filters( 'meom_cookiebot_placeholder_text', __( 'Oops! This video will not be shown because you have disabled the marketing cookies. To see the video, <a href="%s">accept marketing cookies</a>.', 'meom-cookiebot-embed' ) );
+
         $cookie_text  = '<div class="wp-block-embed__cookiebot-message cookieconsent-optout-marketing"><p>';
-        $cookie_text .= sprintf( __( 'Oops! This video will not be shown because you have disabled the marketing cookies. To see the video, <a href="%s">accept marketing cookies</a>.', 'meom-cookiebot-embed' ), 'javascript:Cookiebot.renew()' );
+        $cookie_text .= sprintf( $text, 'javascript:Cookiebot.renew()' );
         $cookie_text .= '</p></div>';
 
         $block_content = str_replace( 'src=', 'data-cookieconsent="marketing" data-cookieblock-src=', $block_content );
