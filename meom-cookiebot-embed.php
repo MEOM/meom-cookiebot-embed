@@ -4,7 +4,7 @@
  * Author: MEOM
  * Author URI: https://www.meom.fi/
  * Description: Replace embeds with notice if videos are blocked by Cookiebot.
- * Version: 1.0
+ * Version: 1.1.1
  * License: GPL2 or later.
  * Text Domain: meom-cookiebot-embed
  * Domain Path: /languages
