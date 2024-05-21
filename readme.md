@@ -62,3 +62,18 @@ function my_prefix_cookiebot_embed_condition( $condition, $block_content, $block
 }
 add_filter( 'meom_cookiebot_embed_condition', 'my_prefix_cookiebot_embed_condition', 10, 3 );
 ```
+
+Default placeholder text is `Oops! This video will not be shown because you have disabled the marketing cookies. To see the video, <a href="%s">accept marketing cookies</a>.`. Code example for changing that message:
+
+```php
+/**
+ * Filters the placeholder text added to the embed block.
+ *
+ * @param string $text Placeholder text.
+ */
+function my_prefix_cookiebot_placeholder_text( $text ) {
+    $text = __( 'Oops! This embed will not be shown because you have disabled the marketing cookies. To see the embed, <a href="%s">accept marketing cookies</a>.', 'kala' );
+    return $text;
+}
+add_filter( 'meom_cookiebot_placeholder_text', 'my_prefix_cookiebot_placeholder_text' );
+``
