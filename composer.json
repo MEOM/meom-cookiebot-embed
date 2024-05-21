@@ -1,6 +1,6 @@
 {
     "name": "meom/meom-cookiebot-embed",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "MEOM cookiebot message for videos",
     "type": "wordpress-muplugin",
     "license": "GPL-2.0-or-later",
